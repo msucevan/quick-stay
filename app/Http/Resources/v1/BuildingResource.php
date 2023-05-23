@@ -17,9 +17,14 @@ class BuildingResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'description' => $this->description,
+            'location' => $this->location,
+            'bedrooms' => $this->bedrooms,
+            'bathrooms' => $this->bathrooms,
             'bookings' => BookingResource::collection($this->bookings),
             'images' => ImageResource::collection($this->images),
             'price' => $this->price,
+            'amenities' => $this->amenities,
         ];
     }
 }

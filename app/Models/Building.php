@@ -10,6 +10,16 @@ class Building extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'location',
+        'price',
+        'bedrooms',
+        'bathrooms',
+        'amenities',
+    ];
+
     public function images(): HasMany
     {
         return $this->hasMany(Image::class);
