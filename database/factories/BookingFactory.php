@@ -17,6 +17,7 @@ class BookingFactory extends Factory
     public function definition(): array
     {
         return [
+            'building_id' => rand(1, 100),
             'start_date' => $this->faker->date(),
             'end_date' => $this->faker->date(),
             'customer_name' => $this->faker->name(),
