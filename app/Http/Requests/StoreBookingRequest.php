@@ -30,9 +30,9 @@ class StoreBookingRequest extends FormRequest
                 'date',
                 function ($attribute, $value, $fail) {
                     $endDate = $this->input('end_date');
-                    $buildingId = $this->input('building_id');
+                    $itemId = $this->input('item_id');
 
-                    $exists = Booking::where('building_id', $buildingId)
+                    $exists = Booking::where('item_id', $itemId)
                         ->where('start_date', '<=', $endDate)
                         ->where('end_date', '>', $value)
                         ->exists();
@@ -46,7 +46,7 @@ class StoreBookingRequest extends FormRequest
             'customer_name' => 'required|string|max:100',
             'customer_email' => 'required|email',
             'customer_phone' => 'required|string',
-            'building_id' => 'required|exists:buildings,id'
+            'item_id' => 'required|exists:items,id'
         ];
     }
 }

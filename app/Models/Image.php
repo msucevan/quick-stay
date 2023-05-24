@@ -12,11 +12,11 @@ class Image extends Model
 
     protected $fillable = [
         'filename',
-        'building_id',
+        'item_id',
     ];
 
-    public function building(): BelongsTo
+    public function item(): BelongsTo
     {
-        return $this->belongsTo(Building::class, 'foreign_key');
+        return $this->belongsTo(Item::class, 'foreign_key');
     }
 }

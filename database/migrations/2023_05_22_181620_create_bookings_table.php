@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_phone');
-            $table->foreignId('building_id');
+            $table->foreignId('item_id');
             $table->timestamps();
         });
     }
