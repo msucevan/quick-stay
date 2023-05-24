@@ -6,9 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Building extends Model
+class Item extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'location',
+        'price',
+        'bedrooms',
+        'bathrooms',
+        'amenities',
+    ];
 
     public function images(): HasMany
     {

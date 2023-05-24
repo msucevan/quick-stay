@@ -10,8 +10,13 @@ class Image extends Model
 {
     use HasFactory;
 
-    public function building(): BelongsTo
+    protected $fillable = [
+        'filename',
+        'item_id',
+    ];
+
+    public function item(): BelongsTo
     {
-        return $this->belongsTo(Building::class, 'foreign_key');
+        return $this->belongsTo(Item::class, 'foreign_key');
     }
 }

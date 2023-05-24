@@ -18,7 +18,7 @@ class ImageFactory extends Factory
     {
         return [
             'filename' => $this->faker->filePath(),
-            'building_id' => rand(1, 100)
+            'item_id' => rand(1, 100)
         ];
     }
 }

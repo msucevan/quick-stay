@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('building_id');
+            $table->foreignId('item_id');
             $table->string('filename');
             $table->timestamps();
         });
@@ -24,7 +24,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->dropForeign('images_building_id_foreign');
+            $table->dropForeign('images_item_id_foreign');
         });
     }
 };

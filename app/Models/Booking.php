@@ -10,8 +10,17 @@ class Booking extends Model
 {
     use HasFactory;
 
-    public function building(): BelongsTo
+    protected $fillable = [
+        'start_date',
+        'end_date',
+        'customer_name',
+        'customer_email',
+        'customer_phone',
+        'item_id'
+    ];
+
+    public function item(): BelongsTo
     {
-        return $this->belongsTo(Building::class, 'foreign_key');
+        return $this->belongsTo(Item::class, 'foreign_key');
     }
 }
